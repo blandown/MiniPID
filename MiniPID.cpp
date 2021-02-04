@@ -111,13 +111,16 @@ void MiniPID::setF(double f){
  * @param d Derivative gain. Responds quickly to large changes in error. Small values prevents P and I terms from causing overshoot.
  */
 void MiniPID::setPID(double p, double i, double d){
-	P=p;I=i;D=d;
-	checkSigns();
+    setP(p);
+    setI(i);
+    setD(d);
 }
 
 void MiniPID::setPID(double p, double i, double d,double f){
-	P=p;I=i;D=d;F=f;
-	checkSigns();
+    setP(p);
+    setI(i);
+    setD(d);
+    setF(f);
 }
 
 /**Set the maximum output value contributed by the I component of the system
